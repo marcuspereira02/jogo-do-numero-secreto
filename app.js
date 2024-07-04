@@ -1,22 +1,22 @@
 let listaDeNumeroSorteados = [];
-let numeroLimite = 10;
+let numeroLimite = 50;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
 function exibirTextoNaTela(tag, texto){
-    let campo = document.querySelector(tag); // usado para selecionar o h1 no html
-    campo.innerHTML = texto; //colocando a frase na variavel titulo
+    let campo = document.querySelector(tag); 
+    campo.innerHTML = texto;
     responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
 }
 
 function exibirMensagemInicial(){
 exibirTextoNaTela('h1', 'Jogo do número secreto');
-exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+exibirTextoNaTela('p', 'Escolha um número entre 1 e 50');
 }
 
 exibirMensagemInicial();
 
-function verificarChute(){ //criando uma função
+function verificarChute(){ 
     let chute = document.querySelector('input').value;
     
     if (chute == numeroSecreto){
@@ -63,5 +63,5 @@ function reiniciarJogo(){
     limparCampo();
     tentativas = 1;
     exibirMensagemInicial();
-    document.getElementById('reiniciar').setAttribute('disabled' , true); //para manter o botão novo jogo ligado apenas quando acertar o numero secreto
+    document.getElementById('reiniciar').setAttribute('disabled' , true);
 }
